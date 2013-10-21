@@ -34,7 +34,10 @@ if [[ $TRAVIS_PULL_REQUEST == "false" ]] ; then
 
 set -x	
 	if [[ $TRAVIS_JOB_NUMBER == *5 ]] ; then 
+		#generate yarn poms & build for yarn.
 		CURRENT_STRATOSPHERE_VERSION=$CURRENT_STRATOSPHERE_VERSION_YARN
+		./tools/generate_specific_pom.sh $CURRENT_STRATOSPHERE_VERSION $CURRENT_STRATOSPHERE_VERSION_YARN pom.xml
+		mvn -DskipTests clean package
 	fi
 	if [[ $TRAVIS_JOB_NUMBER == *2 ]] || [[ $TRAVIS_JOB_NUMBER == *5 ]] ; then 
 		sudo apt-get install sshpass
