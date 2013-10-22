@@ -84,7 +84,7 @@
 			<outputDirectory>log</outputDirectory>
 			<fileMode>0644</fileMode>
 			<excludes>
-				<exclude>*</exclude>
+				<exclude>**/*</exclude>
 			</excludes>
 		</fileSet>
 
@@ -94,7 +94,7 @@
 			<outputDirectory>lib/dropin</outputDirectory>
 			<fileMode>0644</fileMode>
 			<excludes>
-				<exclude>*</exclude>
+				<exclude>**/*</exclude>
 			</excludes>
 		</fileSet>
 
