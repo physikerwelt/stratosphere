@@ -58,6 +58,10 @@ readFromConfig() {
 # -or- the respective environment variables are not set.
 ########################################################################################################################
 
+
+# WARNING !!! , these values are only used if there is nothing spcified in
+# conf/stratosphere-conf.yaml
+
 DEFAULT_JOBM_HEAP_MB=256                            # Java heap size for the JobManager (in MB)
 DEFAULT_TASKM_HEAP_MB=512                           # Java heap size for the TaskManager (in MB)
 DEFAULT_ENV_PID_DIR="/tmp"                          # Directory to store *.pid files to
@@ -167,7 +171,7 @@ fi
 # Arguments for the JVM. Used for job and task manager JVMs.
 # DO NOT USE FOR MEMORY SETTINGS! Use conf/stratosphere-conf.yaml with keys
 # KEY_JOBM_HEAP_MB and KEY_TASKM_HEAP_MB for that!
-JVM_ARGS="-Djava.net.preferIPv4Stack=true"
+JVM_ARGS=""
 
 # Default classpath 
 CLASSPATH=`manglePathList $( echo $NEPHELE_LIB_DIR/*.jar . | sed 's/ /:/g' )`
